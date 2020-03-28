@@ -28,5 +28,5 @@ curl http://${HOST}/api/settings/reboot -X POST -H 'Connection: keep-alive' -H '
 #     You would just have to figure out what the script is called
 
 # Cleanup files
-sleep 3 # Put a sleep timer on this, because I figured out that the cookie was beig removed before the cURL command could execute
+sleep 3 # Put a sleep timer on this, because I figured out that the cookie was being removed before the cURL command could execute
 rm cookie.txt
