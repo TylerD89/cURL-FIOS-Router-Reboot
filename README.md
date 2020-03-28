@@ -8,14 +8,14 @@ Thanks to Anon4f653 for a great starting point! https://www.dslreports.com/forum
 
 -- HOW TO USE --
 
-Clone / copy this bash script to your Linux/macOS machine (This script relies on curl, will not work on Windows unless modified)
+1. Clone / copy this bash script to your Linux/macOS machine (This script relies on curl, will not work on Windows unless modified)
 
-Open terminal (varies depending on which Distribution / OS you are using)
+2. Open up a terminal
 
-Make the bash script executable (e.g: sudo chmod +x VerizonAutoReboot.sh)
+3. Make the bash script executable (e.g: sudo chmod +x VerizonAutoReboot.sh)
 
-Open the script with your preferred text editor (nano is easiest)
+4. Open the script with your preferred text editor (nano is easiest)
 
-Replace the IP address under the "HOST=" variable, do the same with your "PASSWORD="
+5. Replace the IP address under the "HOST=" variable with your router's IP, do the same with your "PASSWORD="
 
-Run the script! Enjoy :)
+6. Run the script! Enjoy :)
