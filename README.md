@@ -8,14 +8,14 @@ Thanks to Anon4f653 for a great starting point for the G1100 Script! https://www
 
 -- HOW TO USE --
 
-1. Clone / copy these bash scripts to your Linux/macOS machine (This script relies on curl and bash, so it will not work on Windows unless modified)
+1. Clone / copy these bash scripts to your Linux/macOS machine (These scripts rely on curl and bash, so it will not work on Windows unless modified)
 
 2. Open up a terminal
 
-3. Make the bash script executable (e.g: sudo chmod +x <script>.sh)
+3. Make the bash script(s) executable (e.g: sudo chmod +x <model>.sh)
 
 4. Open the script you need for your roter model with your preferred text editor (nano is easiest)
 
-5. Replace the IP address under the "HOST=" variable with your router's IP, do the same with your "PASSWORD=", and "USERNAME=" (not present nor needed on the G1100 router script). 
+5. Replace the IP address under the "HOST=" variable with your router's IP, do the same with your "PASSWORD=", and "USERNAME=" (USERNAME variable not present nor needed on the G1100 router script). 
 
 6. Run the script! Enjoy :)
