@@ -18,4 +18,4 @@ Thanks to Anon4f653 for a great starting point for the G1100 Script! https://www
 
 5. Replace the IP address under the "HOST=" variable with your router's IP, do the same with your "PASSWORD=", and "USERNAME=" (not present nor needed on the G1100 router script). 
 
-6. Run the script for your router! Enjoy :)
+6. Run the script! Enjoy :)
