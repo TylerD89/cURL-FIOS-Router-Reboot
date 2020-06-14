@@ -12,7 +12,7 @@ Thanks to Anon4f653 for a great starting point for the G1100 Script! https://www
 
 2. Open up a terminal
 
-3. Make the bash script(s) executable (e.g: sudo chmod +x <model>.sh)
+3. Make the bash script(s) executable (e.g: sudo chmod +x <model#>.sh)
 
 4. Open the script you need for your roter model with your preferred text editor (nano is easiest)
 
