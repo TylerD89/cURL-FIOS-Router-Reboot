@@ -37,7 +37,7 @@ MD5_HASH=`echo -n "${SALTED}" | md5sum | cut -c1-32`     # Use md5sum to convert
 sleep 1 # Router cooldown
 
 # Send credinentals to router using the url-encoded HTML form
-POST=`curl -s 'http://192.168.1.2/index.cgi' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' -H 'Accept_Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9' -H "Cookie: rg_cookie_session_id=${SESSION_ID}" --data "active_page=9073&session_key=${SESSION_KEY}&active_page_str=page_login&page_title=Login&mimic_button_field=submit_button_login_submit%3A+..&button_value=.&strip_page_top=0&user_name_defval=&user_name=${USERNAME}&passwordmask_${SESSION_ID}=&md5_pass=${MD5_HASH}&auth_key=${AUTH_KEY}"` > /dev/null
+POST=`curl -s 'http://'"$HOST"'/index.cgi' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' -H 'Accept_Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9' -H "Cookie: rg_cookie_session_id=${SESSION_ID}" --data "active_page=9073&session_key=${SESSION_KEY}&active_page_str=page_login&page_title=Login&mimic_button_field=submit_button_login_submit%3A+..&button_value=.&strip_page_top=0&user_name_defval=&user_name=${USERNAME}&passwordmask_${SESSION_ID}=&md5_pass=${MD5_HASH}&auth_key=${AUTH_KEY}"` > /dev/null
 
 if echo "${POST}" | grep -q -o "page=9130" # If router redirects us to the home page
 then
@@ -55,13 +55,13 @@ fi
 
 # Reboot Command
 sleep 1 # Router cooldown
-POST=`curl -s 'http://192.168.1.2/index.cgi' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' -H 'Accept-Language: en-US,en;q=0.9' -H "Cookie: rg_cookie_session_id=${SESSION_ID}" --data "active_page=140&session_key=${SESSION_KEY}&active_page_str=page_reboot&page_title=Reboot+Router&mimic_button_field=submit_button_ro_submit%3A+..&button_value=140&strip_page_top=0"` > /dev/null
+POST=`curl -s 'http://'"$HOST"'/index.cgi' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' -H 'Accept-Language: en-US,en;q=0.9' -H "Cookie: rg_cookie_session_id=${SESSION_ID}" --data "active_page=140&session_key=${SESSION_KEY}&active_page_str=page_reboot&page_title=Reboot+Router&mimic_button_field=submit_button_ro_submit%3A+..&button_value=140&strip_page_top=0"` > /dev/null
 
 if echo "${POST}" | grep -q -o "page=850" # If router redirects us to the waiting page
 then
         echo "Reboot Command Executed" # Success
 else # All other page numbers
-				echo "Something Went Wrong" # Error
+	echo "Something Went Wrong" # Error
 fi
 # End of reboot command
 
